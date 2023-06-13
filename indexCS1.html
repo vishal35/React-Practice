@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<!-- how to write hello world from Javascript -->
+<!-- <script>
+    const heading = document.createElement("h1")
+    heading.innerHTML = "Hello World from Javascript"
+
+    const root = document.getElementById("root")
+    root.appendChild(heading)
+</script> -->
+<!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+<!-- how to write hello world from React -->
+<!-- <script>
+    const heading = React.createElement("h1", {}, "Hello World from React")
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+
+    root.render(heading)
+</script> -->
+<!-- we need to pass type= module because otherwise it throw error 
+    treats App.js as normal js file
+    finds import statement that is not allowed in js 
+    so to let it know its react not js file we need to pass type= module
+-->
+
+<script type="module" src="./App.js"></script>
+
+</html>
