@@ -32,18 +32,18 @@ const Body = () => {
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
-                <div className="search">
-                    <input type="searctext" className="search-box" value={searchText} onChange={(e) => {
+                <div className="search p-5 bg-pink-50 my-2">
+                    <input type="searctext" className="search-box focus:bg-green-50" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value)
                     }} />
-                    <button onClick={() => {
+                    <button className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-gray-500" onClick={() => {
                         const filterRestaurant = listOfRestaurants.filter(res => res.data.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestaurants(filterRestaurant)
                     }}>Search</button>
                 </div>
                 <button className="filter-btn">Top Rated Restaurants</button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filteredRestaurants.map(res => (
                     <Link key={res.data.id} to={"restaurants/" + res.data.id}>
                         <RestaurantCard restData={res} />
