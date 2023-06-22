@@ -26,12 +26,6 @@ class UserClass extends React.Component {
         const { count } = this.state
         return (
             <div className="user-card">
-                {/* <h1>{count}</h1>
-                <button onClick={() => {
-                    this.setState({
-                        count: this.state.count + 1
-                    })
-                }}>Count Increse</button> */}
                 <img src={avatar_url} style={{ width: '200px', height: 'auto' }} />
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
