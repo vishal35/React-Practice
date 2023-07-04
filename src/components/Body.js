@@ -33,17 +33,17 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search p-5 bg-pink-50 my-2">
-                    <input type="searctext" className="search-box focus:bg-green-50" value={searchText} onChange={(e) => {
+                    <input data-testid="search-input" type="searctext" className="search-box focus:bg-green-50" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value)
                     }} />
-                    <button className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-gray-500" onClick={() => {
+                    <button data-testid="search-btn" className="p-2 m-2 bg-purple-900 text-white rounded-md hover:bg-gray-500" onClick={() => {
                         const filterRestaurant = listOfRestaurants.filter(res => res.data.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilteredRestaurants(filterRestaurant)
                     }}>Search</button>
                 </div>
                 <button className="filter-btn">Top Rated Restaurants</button>
             </div>
-            <div className="flex flex-wrap">
+            <div data-testid="rest-list" className="flex flex-wrap">
                 {filteredRestaurants.map(res => (
                     <Link key={res.data.id} to={"restaurants/" + res.data.id}>
                         <RestaurantCard restData={res} />

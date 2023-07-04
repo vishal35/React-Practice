@@ -37,9 +37,9 @@ const RestaurantMenu = () => {
             </div>
             <div className="p-5">
                 <h2 className="text-xl font-bold">Menu</h2>
-                <ul>
+                <ul data-testid="menu">
                     {itemCards.map((item) =>
-                        <li className="p-1" key={item.card.info.id}>{item.card.info.name} - {item.card.info.price / 100} - <button className="p-2 bg-green-100" onClick={() => addFoodItem(item.card.info)} >Add</button>
+                        <li className="p-1" key={item.card.info.id}>{item.card.info.name} - {item.card.info.price / 100} - <button data-testid="add-item" className="p-2 bg-green-100" onClick={() => addFoodItem(item.card.info)} >Add</button>
                         </li>)}
                 </ul>
             </div>
